@@ -3,40 +3,6 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="font-sans flex flex-col min-h-screen">
-      {/* Header */}
-      <header className="bg-white shadow-md">
-        <nav className="container mx-auto flex justify-between items-center py-4 px-6">
-          <h1 className="text-2xl font-bold text-red-700">Syntaxerrorisme</h1>
-          <ul className="flex gap-6 text-sm sm:text-base">
-            <li>
-              <a href="/about" className="hover:text-red-600">
-                Qui nous sommes
-              </a>
-            </li>
-            <li>
-              <a href="/laws" className="hover:text-red-600">
-                Textes de lois
-              </a>
-            </li>
-            <li>
-              <a href="/jurisprudence" className="hover:text-red-600">
-                Jurisprudence
-              </a>
-            </li>
-            <li>
-              <a href="/history" className="hover:text-red-600">
-                Histoire
-              </a>
-            </li>
-            <li>
-              <a href="/faq" className="hover:text-red-600">
-                FAQ
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
       {/* Main */}
       <main className="flex-1 container mx-auto px-6 py-12">
         <section className="text-center mb-12">
@@ -84,12 +50,6 @@ export default function Home() {
           </div>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-gray-100 border-t py-6 text-center text-sm text-gray-600">
-        © {new Date().getFullYear()} Observatoire du Syntaxerrorisme — Tous
-        droits réservés
-      </footer>
     </div>
   );
 }
