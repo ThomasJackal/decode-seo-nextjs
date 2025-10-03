@@ -23,7 +23,11 @@ export default function Footer() {
 
         {/* Bloc 2 : Juridique */}
         <div>
-          <h4 className="font-semibold text-gray-800 mb-2">Juridique</h4>
+          <h4 className="font-semibold text-gray-800 mb-2">
+            <Link href="/juridique" className="hover:underline">
+              Juridique
+            </Link>
+          </h4>
           <ul className="space-y-1">
             <li>
               <Link href="/juridique/laws" className="hover:underline">
@@ -55,13 +59,12 @@ export default function Footer() {
 
         {/* Bloc 3 : Histoire & Médias */}
         <div>
-          <h4 className="font-semibold text-gray-800 mb-2">Histoire</h4>
+          <h4 className="font-semibold text-gray-800 mb-2">
+            <Link href="/history" className="hover:underline">
+              Histoire
+            </Link>
+          </h4>
           <ul className="space-y-1 mb-4">
-            <li>
-              <Link href="/history" className="hover:underline">
-                Introduction
-              </Link>
-            </li>
             <li>
               <Link href="/history/chronology" className="hover:underline">
                 Chronologie
@@ -73,7 +76,11 @@ export default function Footer() {
               </Link>
             </li>
           </ul>
-          <h4 className="font-semibold text-gray-800 mb-2">Médias</h4>
+          <h4 className="font-semibold text-gray-800 mb-2">
+            <Link href="/medias" className="hover:underline">
+              Médias
+            </Link>
+          </h4>
           <ul className="space-y-1">
             <li>
               <Link href="/medias/articles" className="hover:underline">
@@ -95,7 +102,11 @@ export default function Footer() {
 
         {/* Bloc 4 : Portraits, Jeux, À propos */}
         <div>
-          <h4 className="font-semibold text-gray-800 mb-2">Portraits</h4>
+          <h4 className="font-semibold text-gray-800 mb-2">
+            <Link href="/portraits" className="hover:underline">
+              Portraits
+            </Link>
+          </h4>
           <ul className="space-y-1 mb-4">
             <li>
               <Link href="/portraits/convicted" className="hover:underline">
@@ -118,7 +129,11 @@ export default function Footer() {
               </Link>
             </li>
           </ul>
-          <h4 className="font-semibold text-gray-800 mb-2">Jeux</h4>
+          <h4 className="font-semibold text-gray-800 mb-2">
+            <Link href="/games" className="hover:underline">
+              Jeux
+            </Link>
+          </h4>
           <ul className="space-y-1 mb-4">
             <li>
               <Link href="/games/quizz" className="hover:underline">
@@ -131,7 +146,11 @@ export default function Footer() {
               </Link>
             </li>
           </ul>
-          <h4 className="font-semibold text-gray-800 mb-2">À propos</h4>
+          <h4 className="font-semibold text-gray-800 mb-2">
+            <Link href="/about" className="hover:underline">
+              À propos
+            </Link>
+          </h4>
           <ul className="space-y-1">
             <li>
               <Link href="/about/contact" className="hover:underline">
