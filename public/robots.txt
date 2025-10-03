@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /api/
+
+Sitemap: https://observatoire-syntaxerrorisme.vercel.app/sitemap.xml
