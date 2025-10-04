@@ -58,6 +58,7 @@ const events = [
         url: "https://en.wikipedia.org/wiki/Nancy_Leveson",
       },
     ],
+    image: "/images/chronology/therac.jpg",
   },
   {
     year: "1988",
@@ -74,6 +75,7 @@ const events = [
         url: "https://en.wikipedia.org/wiki/Robert_Tappan_Morris",
       },
     ],
+    image: "/images/chronology/Morris_Worm.jpg",
   },
   {
     year: "1996",
@@ -84,6 +86,7 @@ const events = [
       "La tragédie met en évidence le danger de réutiliser du code sans revalider ses hypothèses dans un nouveau contexte. L’explosion d’Ariane 5 reste l’un des cas les plus cités en ingénierie logicielle pour rappeler que la rigueur dans la validation est vitale.",
     type: "technique",
     link: "https://en.wikipedia.org/wiki/Ariane_5#Flight_501_failure",
+    image: "/images/chronology/Ariane_5.jpg",
   },
   {
     year: "1999",
@@ -136,6 +139,7 @@ const events = [
         url: "https://en.wikipedia.org/wiki/Heartbleed",
       },
     ],
+    image: "/images/chronology/heartbleed.png",
   },
   {
     year: "Depuis 2015",
@@ -162,6 +166,7 @@ const events = [
         url: "https://en.wikipedia.org/wiki/Anatoly_Dyatlov",
       },
     ],
+    image: "/images/chronology/chernobyl.jpg",
   },
   {
     year: "1984",
@@ -178,6 +183,7 @@ const events = [
         url: "https://en.wikipedia.org/wiki/Warren_Anderson_(American_businessman)",
       },
     ],
+    image: "/images/chronology/bhopal.jpg",
   },
   {
     year: "2010",
@@ -194,6 +200,7 @@ const events = [
         url: "https://en.wikipedia.org/wiki/Tony_Hayward",
       },
     ],
+    image: "/images/chronology/deepwater.webp",
   },
   {
     year: "2011",
@@ -210,6 +217,7 @@ const events = [
         url: "https://en.wikipedia.org/wiki/Masao_Yoshida_(nuclear_engineer)",
       },
     ],
+    image: "/images/chronology/fukushima.avif",
   },
   {
     year: "Janvier 1986",
@@ -226,6 +234,7 @@ const events = [
         url: "https://en.wikipedia.org/wiki/Roger_Boisjoly",
       },
     ],
+    image: "/images/chronology/challenger.jpg",
   },
   {
     year: "2005",
@@ -284,6 +293,7 @@ const events = [
         url: "https://en.wikipedia.org/wiki/Joseph_Hazelwood",
       },
     ],
+    image: "/images/chronology/exxon.webp",
   },
   {
     year: "1979",

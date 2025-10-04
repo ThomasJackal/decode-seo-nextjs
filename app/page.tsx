@@ -169,43 +169,69 @@ export default function Home() {
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
             Explorer
           </h2>
+
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <Link href="/juridique" className="p-4 border rounded hover:shadow">
-              <h3 className="font-semibold">Juridique</h3>
-              <p className="text-sm text-gray-600 mt-1">
-                Textes de lois, code pénal, jurisprudence et procédures.
-              </p>
-            </Link>
-            <Link href="/history" className="p-4 border rounded hover:shadow">
-              <h3 className="font-semibold">Histoire</h3>
-              <p className="text-sm text-gray-600 mt-1">
-                Chronologie, figures marquantes et archives historiques.
-              </p>
-            </Link>
-            <Link href="/medias" className="p-4 border rounded hover:shadow">
-              <h3 className="font-semibold">Médias</h3>
-              <p className="text-sm text-gray-600 mt-1">
-                Articles, bibliographie et films liés au syntaxerrorisme.
-              </p>
-            </Link>
-            <Link href="/portraits" className="p-4 border rounded hover:shadow">
-              <h3 className="font-semibold">Portraits</h3>
-              <p className="text-sm text-gray-600 mt-1">
-                Condamnés, avocats, politiques et victimes.
-              </p>
-            </Link>
-            <Link href="/games" className="p-4 border rounded hover:shadow">
-              <h3 className="font-semibold">Jeux & quiz</h3>
-              <p className="text-sm text-gray-600 mt-1">
-                Quiz interactifs et Top 10 pour sensibiliser en s'amusant.
-              </p>
-            </Link>
-            <Link href="/about" className="p-4 border rounded hover:shadow">
-              <h3 className="font-semibold">À propos</h3>
-              <p className="text-sm text-gray-600 mt-1">
-                Contact, FAQ et lexique du syntaxerrorisme.
-              </p>
-            </Link>
+            {[
+              {
+                href: "/juridique",
+                title: "Juridique",
+                desc: "Textes de lois, code pénal, jurisprudence et procédures.",
+                img: "/images/juridique-bg.jpg",
+              },
+              {
+                href: "/history",
+                title: "Histoire",
+                desc: "Chronologie, figures marquantes et archives historiques.",
+                img: "/images/history-bg.jpg",
+              },
+              {
+                href: "/medias",
+                title: "Médias",
+                desc: "Articles, bibliographie et films liés au syntaxerrorisme.",
+                img: "/images/medias-bg.jpg",
+              },
+              {
+                href: "/portraits",
+                title: "Portraits",
+                desc: "Condamnés, avocats, politiques et victimes.",
+                img: "/images/portraits-bg.jpg",
+              },
+              {
+                href: "/games",
+                title: "Jeux & quiz",
+                desc: "Quiz interactifs et Top 10 pour sensibiliser en s'amusant.",
+                img: "/images/games-bg.jpg",
+              },
+              {
+                href: "/about",
+                title: "À propos",
+                desc: "Contact, FAQ et lexique du syntaxerrorisme.",
+                img: "/images/about-bg.jpg",
+              },
+            ].map(({ href, title, desc, img }) => (
+              <Link
+                key={href}
+                href={href}
+                className="relative p-4 rounded-2xl overflow-hidden group h-40 flex flex-col justify-end text-white shadow-md"
+                style={{
+                  backgroundImage: `url(${img})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              >
+                {/* Overlay sombre pour lisibilité */}
+                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-all duration-300"></div>
+
+                {/* Contenu texte au-dessus de l’image */}
+                <div className="relative z-10">
+                  <h3 className="font-semibold text-lg">{title}</h3>
+                  <p className="text-sm text-gray-200 mt-1">{desc}</p>
+                </div>
+
+                {/* Effet zoom au hover */}
+                <div className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500 ease-out" />
+              </Link>
+            ))}
           </div>
         </section>
 

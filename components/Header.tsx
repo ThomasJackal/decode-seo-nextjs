@@ -82,69 +82,61 @@ export default function Header() {
       : null;
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b shadow-sm">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo + Back */}
-        <div className="flex items-center gap-4">
-          {/* Bouton retour si pas sur la home */}
-          {pathname !== "/" && parentPath && (
-            <Link
-              href={parentPath || "/"}
-              className="flex items-center gap-1 text-gray-600 hover:text-indigo-600 text-sm"
-            >
-              <ArrowLeft size={16} />
-            </Link>
-          )}
+    <header className="sticky top-0 z-50 bg-white border-b shadow-sm relative">
+      {/* Bouton retour si pas sur la home */}
+      {pathname !== "/" && parentPath && (
+        <Link
+          href={parentPath || "/"}
+          className=" -bottom-16 left-8 flex absolute items-center gap-1 text-gray-600 hover:text-indigo-600 text-sm"
+        >
+          <ArrowLeft size={32} />
+        </Link>
+      )}
 
-          <div>
-            <Link
-              href="/"
-              className="text-xl font-bold text-gray-800 hover:text-indigo-600"
-            >
-              Observatoire du Syntaxerrorisme
-            </Link>
-            <p className="text-sm text-gray-600 mt-1">
-              les experts mondiaux du crime syntaxique
-            </p>
-          </div>
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        {/* Titre */}
+        <div>
+          <Link
+            href="/"
+            className="text-xl font-bold text-gray-800 hover:text-indigo-600"
+          >
+            Observatoire du Syntaxerrorisme
+          </Link>
+          <p className="text-sm text-gray-600 mt-1">
+            les experts mondiaux du crime syntaxique
+          </p>
         </div>
 
         {/* Navigation */}
         <nav className="hidden md:flex space-x-6">
-          {menuItems.map((item, index) => (
-            <DropdownMenu
-              key={index}
-              open={openIndex === index}
-              onOpenChange={(isOpen) => setOpenIndex(isOpen ? index : null)}
-            >
-              <div
-                className="relative"
-                onMouseEnter={() => setOpenIndex(index)}
-                onMouseLeave={() => setOpenIndex(null)}
-              >
-                {/* Lien parent cliquable */}
-                <DropdownMenuTrigger asChild>
-                  <Link
-                    href={item.href}
-                    className="flex items-center gap-1 px-2 py-1 text-sm font-medium text-gray-700 hover:text-indigo-600"
-                  >
-                    {item.label}
-                    {item.children && <ChevronDown size={16} />}
-                  </Link>
-                </DropdownMenuTrigger>
+          {menuItems.map((item) => (
+            <div key={item.href} className="relative">
+              {/* Le "groupe" est uniquement sur le lien parent */}
+              <div className="group inline-block">
+                <Link
+                  href={item.href}
+                  className="flex items-center gap-1 px-2 py-1 text-sm font-medium text-gray-700 hover:text-indigo-600"
+                >
+                  {item.label}
+                  {item.children && <ChevronDown size={16} />}
+                </Link>
 
-                {/* Dropdown enfant au hover */}
+                {/* Menu enfant : s'affiche uniquement quand le titre est survolé */}
                 {item.children && (
-                  <DropdownMenuContent>
-                    {item.children.map((child, i) => (
-                      <DropdownMenuItem key={i} asChild>
-                        <Link href={child.href}>{child.label}</Link>
-                      </DropdownMenuItem>
+                  <div className="absolute left-0 w-48 bg-white border rounded shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200">
+                    {item.children.map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        {child.label}
+                      </Link>
                     ))}
-                  </DropdownMenuContent>
+                  </div>
                 )}
               </div>
-            </DropdownMenu>
+            </div>
           ))}
         </nav>
       </div>

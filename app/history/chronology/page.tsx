@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import events from "@/data/chronology";
+import Image from "next/image";
 
 const BASE_URL = "https://observatoire-syntaxerrorisme.vercel.app";
 
@@ -55,10 +56,10 @@ export default function ChronologyPage() {
         </ul>
       </nav>
 
-      <div className="space-y-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {events.map((event) => (
           <div key={event.year} id={event.year}>
-            <Card className="shadow-lg border rounded-2xl">
+            <Card className="shadow-lg border rounded-2xl h-full flex flex-col">
               <CardHeader className="flex flex-col md:flex-row md:items-center md:justify-between">
                 <CardTitle className="text-xl font-bold">
                   {event.year} — {event.title}
@@ -71,9 +72,23 @@ export default function ChronologyPage() {
                   {event.type}
                 </span>
               </CardHeader>
-              <CardContent className="space-y-3">
+
+              <CardContent className="space-y-3 flex-grow flex flex-col">
+                {event.image && (
+                  <div className="relative w-full h-56 rounded-xl overflow-hidden">
+                    <Image
+                      src={event.image}
+                      alt={event.title}
+                      fill
+                      className="object-cover hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                )}
+
                 <p className="text-gray-700">{event.description}</p>
                 <p className="text-sm text-gray-600 italic">{event.details}</p>
+
                 {event.link && (
                   <a
                     href={event.link}
@@ -84,6 +99,7 @@ export default function ChronologyPage() {
                     Source ↗
                   </a>
                 )}
+
                 {event.figures && (
                   <div className="mt-2 p-3 bg-gray-50 rounded-lg">
                     <p className="text-sm font-medium text-gray-700">
