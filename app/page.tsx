@@ -131,12 +131,6 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <meta
-          name="google-site-verification"
-          content="NREny4h-mY0IjM28qcxOEHy7JbJ0VnaecCo72ZNtXY0"
-        />
-      </Head>
       <main className="max-w-5xl mx-auto px-6 py-12">
         {/* HERO */}
         <section className="mb-12">
