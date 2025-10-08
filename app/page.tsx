@@ -177,37 +177,37 @@ export default function Home() {
                 href: "/juridique",
                 title: "Juridique",
                 desc: "Textes de lois, code pénal, jurisprudence et procédures.",
-                img: "/images/juridique-bg.jpg",
+                img: "/images/juridique-bg.webp",
               },
               {
                 href: "/history",
                 title: "Histoire",
                 desc: "Chronologie, figures marquantes et archives historiques.",
-                img: "/images/history-bg.jpg",
+                img: "/images/history-bg.webp",
               },
               {
                 href: "/medias",
                 title: "Médias",
                 desc: "Articles, bibliographie et films liés au syntaxerrorisme.",
-                img: "/images/medias-bg.jpg",
+                img: "/images/medias-bg.webp",
               },
               {
                 href: "/portraits",
                 title: "Portraits",
                 desc: "Condamnés, avocats, politiques et victimes.",
-                img: "/images/portraits-bg.jpg",
+                img: "/images/portraits-bg.webp",
               },
               {
                 href: "/games",
                 title: "Jeux & quiz",
                 desc: "Quiz interactifs et Top 10 pour sensibiliser en s'amusant.",
-                img: "/images/games-bg.jpg",
+                img: "/images/games-bg.webp",
               },
               {
                 href: "/about",
                 title: "À propos",
                 desc: "Contact, FAQ et lexique du syntaxerrorisme.",
-                img: "/images/about-bg.jpg",
+                img: "/images/about-bg.webp",
               },
             ].map(({ href, title, desc, img }) => (
               <Link
