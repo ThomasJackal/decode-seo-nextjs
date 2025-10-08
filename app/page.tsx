@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import ClientTimeline from "@/components/ClientTimeline";
 
 const BASE_URL = "https://observatoire-syntaxerrorisme.vercel.app";
 
@@ -131,9 +132,31 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        {/* Préconnect et preload */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link rel="preconnect" href={BASE_URL} />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/juridique-bg.webp"
+          imageSrcSet="/images/juridique-bg.webp 1x, /images/juridique-bg@2x.webp 2x"
+        />
+        {/* CSS critique en inline */}
+        <style>{`
+          .hero h1 { font-size: 2rem; text-align: center; }
+          .explorer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+        `}</style>
+      </Head>
+
       <main className="max-w-5xl mx-auto px-6 py-12">
         {/* HERO */}
-        <section className="mb-12">
+        <section className="hero mb-12">
           <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900">
             Observatoire du{" "}
             <span className="text-indigo-600">Syntaxerrorisme</span>
@@ -165,7 +188,6 @@ export default function Home() {
           </p>
         </section>
 
-        {/* QUICK LINKS / SITEMAP SNIPPET */}
         <section className="mb-12">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
             Explorer
@@ -220,16 +242,11 @@ export default function Home() {
                   backgroundPosition: "center",
                 }}
               >
-                {/* Overlay sombre pour lisibilité */}
                 <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-all duration-300"></div>
-
-                {/* Contenu texte au-dessus de l’image */}
                 <div className="relative z-10">
                   <h3 className="font-semibold text-lg">{title}</h3>
                   <p className="text-sm text-gray-200 mt-1">{desc}</p>
                 </div>
-
-                {/* Effet zoom au hover */}
                 <div className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500 ease-out" />
               </Link>
             ))}
@@ -242,7 +259,6 @@ export default function Home() {
             Jurisprudence récente
           </h2>
           <div className="grid gap-4">
-            {/* Example items; remplace par contenu réel */}
             <article className="p-4 border rounded">
               <Link
                 href="/juridique/jurisprudence/affaire-balises"
@@ -255,7 +271,6 @@ export default function Home() {
                 syntaxique dans un projet open-source.
               </p>
             </article>
-
             <article className="p-4 border rounded">
               <Link
                 href="/juridique/jurisprudence/point-virgule"
@@ -315,14 +330,7 @@ export default function Home() {
             De l’origine du terme jusqu’aux affaires contemporaines — une frise
             interactive retraçant les étapes clés du syntaxerrorisme.
           </p>
-          <p className="mt-3">
-            <Link
-              href="/history/chronology"
-              className="text-sm text-indigo-600 hover:underline"
-            >
-              Explorer la chronologie complète →
-            </Link>
-          </p>
+          <ClientTimeline />
         </section>
 
         {/* CTA / ENGAGEMENT */}
@@ -335,7 +343,6 @@ export default function Home() {
             lettre d'information pour recevoir les mises à jour sur le
             syntaxerrorisme.
           </p>
-
           <form
             method="post"
             action="/api/subscribe"
@@ -362,7 +369,7 @@ export default function Home() {
           </form>
         </section>
 
-        {/* FAQ SUMMARY (visible) */}
+        {/* FAQ SUMMARY */}
         <section className="mb-12">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
             FAQ rapide
@@ -396,7 +403,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* FOOTER NOTE (small sitemap snippet for bots & users) */}
+        {/* FOOTER NOTE */}
         <section className="mb-12 text-sm text-gray-500">
           <p>
             © {new Date().getFullYear()} Observatoire du Syntaxerrorisme —{" "}
@@ -414,8 +421,8 @@ export default function Home() {
       {/* JSON-LD */}
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        defer
       />
     </>
   );
