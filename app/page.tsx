@@ -62,6 +62,8 @@ export const metadata: Metadata = {
 export default function Home() {
   const now = new Date().toISOString().slice(0, 10);
 
+
+  
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -70,6 +72,10 @@ export default function Home() {
         "@id": `${BASE_URL}/#org`,
         name: "Observatoire du Syntaxerrorisme",
         url: BASE_URL,
+        logo: {
+          "@type": "ImageObject",
+          url: `${BASE_URL}/images/logo.png`,
+        },  
         sameAs: [],
       },
       {
@@ -77,6 +83,10 @@ export default function Home() {
         "@id": `${BASE_URL}/#website`,
         url: BASE_URL,
         name: "Observatoire du Syntaxerrorisme",
+        alternateName: [
+          "Observatoire Syntaxerrorisme",
+          "Observatoire du Syntax Errorisme",
+        ],  
         potentialAction: {
           "@type": "SearchAction",
           target: `${BASE_URL}/?q={search_term_string}`,
