@@ -59,6 +59,7 @@ export default function FiguresPage() {
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 33vw"
+                loading="lazy"
               />
             </div>
 

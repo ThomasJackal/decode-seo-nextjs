@@ -5,7 +5,8 @@ import Link from "next/link";
 const BASE_URL = "https://observatoire-syntaxerrorisme.vercel.app";
 
 export const metadata: Metadata = {
-  title: "Films et documentaires sur le Syntaxerrorisme — Observatoire du Syntaxerrorisme",
+  title:
+    "Films et documentaires sur le Syntaxerrorisme — Observatoire du Syntaxerrorisme",
   description:
     "Découvrez les films et documentaires abordant le syntaxerrorisme : fictions, reportages et analyses. Explorez les affiches, anecdotes et liens IMDb pour approfondir vos connaissances.",
   openGraph: {
@@ -118,31 +119,57 @@ export default function MediasMoviesPage() {
   return (
     <main className="max-w-5xl mx-auto px-6 py-12 text-gray-800">
       <h1 className="text-3xl font-bold mb-6">
-        Films et documentaires sur le <span className="text-indigo-600">Syntaxerrorisme</span>
+        Films et documentaires sur le{" "}
+        <span className="text-indigo-600">Syntaxerrorisme</span>
       </h1>
 
       <p className="mb-8 text-gray-700 prose">
-        Cette page recense les films de fiction et documentaires qui explorent le <strong>syntaxerrorisme</strong>. 
-        Découvrez les affiches, anecdotes, et liens directs vers IMDb pour approfondir votre compréhension de ce phénomène.
+        Cette page recense les films de fiction et documentaires qui explorent
+        le <strong>syntaxerrorisme</strong>. Découvrez les affiches, anecdotes,
+        et liens directs vers IMDb pour approfondir votre compréhension de ce
+        phénomène.
       </p>
 
       <section className="space-y-10">
         {movies.map((movie, index) => (
-          <article key={index} className="flex flex-col md:flex-row border rounded-lg p-4 shadow-sm hover:shadow-md transition">
+          <article
+            key={index}
+            className="flex flex-col md:flex-row border rounded-lg p-4 shadow-sm hover:shadow-md transition"
+          >
             <div className="md:w-1/4 mb-4 md:mb-0 flex-shrink-0">
               <a href={movie.imdb} target="_blank" rel="noopener noreferrer">
-                <Image src={movie.poster} alt={movie.title} width={200} height={300} className="rounded-lg" />
+                <Image
+                  src={movie.poster}
+                  alt={movie.title}
+                  width={200}
+                  height={300}
+                  className="rounded-lg"
+                  loading="lazy"
+                />
               </a>
             </div>
             <div className="md:w-3/4 md:pl-6">
               <h2 className="text-xl font-semibold mb-2">
-                <a href={movie.imdb} target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">
+                <a
+                  href={movie.imdb}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-indigo-600 hover:underline"
+                >
                   {movie.title} ({movie.year}) — {movie.type}
                 </a>
               </h2>
               <p className="text-gray-700 mb-2">{movie.description}</p>
               <p className="text-sm text-gray-500">
-                Voir sur IMDb : <a href={movie.imdb} target="_blank" rel="noopener noreferrer" className="hover:underline text-indigo-600">{movie.title}</a>
+                Voir sur IMDb :{" "}
+                <a
+                  href={movie.imdb}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline text-indigo-600"
+                >
+                  {movie.title}
+                </a>
               </p>
             </div>
           </article>
@@ -150,13 +177,35 @@ export default function MediasMoviesPage() {
       </section>
 
       <section className="mt-12 prose text-gray-700">
-        <h2 className="text-2xl font-semibold mb-4">SEO et navigation interne</h2>
+        <h2 className="text-2xl font-semibold mb-4">
+          SEO et navigation interne
+        </h2>
         <p>
-          Cette page complète la section <Link href="/medias" className="text-indigo-600 hover:underline">Médias</Link> et permet de naviguer vers 
-          les ressources liées : <Link href="/medias/articles" className="text-indigo-600 hover:underline">Articles</Link>, 
-          <Link href="/medias/bibliography" className="text-indigo-600 hover:underline">Bibliographie</Link>.
+          Cette page complète la section{" "}
+          <Link href="/medias" className="text-indigo-600 hover:underline">
+            Médias
+          </Link>{" "}
+          et permet de naviguer vers les ressources liées :{" "}
+          <Link
+            href="/medias/articles"
+            className="text-indigo-600 hover:underline"
+          >
+            Articles
+          </Link>
+          ,
+          <Link
+            href="/medias/bibliography"
+            className="text-indigo-600 hover:underline"
+          >
+            Bibliographie
+          </Link>
+          .
         </p>
-        <p>Mots-clés ciblés : syntaxerrorisme, films, documentaires, fiction technologique, bugs informatiques, catastrophes logicielles, analyse médiatique, IMDb.</p>
+        <p>
+          Mots-clés ciblés : syntaxerrorisme, films, documentaires, fiction
+          technologique, bugs informatiques, catastrophes logicielles, analyse
+          médiatique, IMDb.
+        </p>
       </section>
     </main>
   );

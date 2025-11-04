@@ -62,8 +62,6 @@ export const metadata: Metadata = {
 export default function Home() {
   const now = new Date().toISOString().slice(0, 10);
 
-
-  
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -75,7 +73,7 @@ export default function Home() {
         logo: {
           "@type": "ImageObject",
           url: `${BASE_URL}/images/logo.png`,
-        },  
+        },
         sameAs: [],
       },
       {
@@ -86,7 +84,7 @@ export default function Home() {
         alternateName: [
           "Observatoire Syntaxerrorisme",
           "Observatoire du Syntax Errorisme",
-        ],  
+        ],
         potentialAction: {
           "@type": "SearchAction",
           target: `${BASE_URL}/?q={search_term_string}`,
@@ -271,7 +269,7 @@ export default function Home() {
           <div className="grid gap-4">
             <article className="p-4 border rounded">
               <Link
-                href="/juridique/jurisprudence/affaire-balises"
+                href="/juridique/jurisprudence"
                 className="text-lg font-medium text-indigo-600"
               >
                 Affaire « Balises mal fermées » — Cour numérique, 2024
@@ -283,7 +281,7 @@ export default function Home() {
             </article>
             <article className="p-4 border rounded">
               <Link
-                href="/juridique/jurisprudence/point-virgule"
+                href="/juridique/jurisprudence"
                 className="text-lg font-medium text-indigo-600"
               >
                 Affaire « Point-virgule manquant » — Tribunal de l'Internet,
