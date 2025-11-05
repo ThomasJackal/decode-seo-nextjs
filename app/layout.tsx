@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,6 +48,7 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -61,40 +63,15 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
       >
+        {/* Global animated background */}
+        <AnimatedBackground />
+
         <Header />
-        {children}
+        <main className="relative z-10">{children}</main>
         <Footer />
       </body>
     </html>
   );
 }
-
-/*
-home
--Juridique (laws)
---(jurisprudence)
---(penalcode)
---prevention)
---(procedure)
--Histoire (history)
---(chronology)
---(figures)
--Médias (medias)
---(articles)
---(bibliography)
---(movies)
--Portraits (portraits)
---(convicted)
---(lawyers)
---(political)
---(victims)
--Jeux (games)
---(quizz)
---(topten)
--A propos (about)
---(contact)
---(faq)
---(lexicon)
-*/

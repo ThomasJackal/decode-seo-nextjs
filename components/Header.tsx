@@ -3,17 +3,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown, ArrowLeft } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Header() {
   const pathname = usePathname();
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   // Définition du menu
   const menuItems = [
@@ -92,6 +86,17 @@ export default function Header() {
           <ArrowLeft size={32} />
         </Link>
       )}
+
+      <div className="absolute bottom-0 left-0 w-full flex justify-start px-16 pointer-events-none">
+        <Image
+          src="/logo.svg"
+          alt="Logo Observatoire du Syntaxerrorisme"
+          width={50}
+          height={50}
+          className="opacity-90 pointer-events-none select-none"
+          priority
+        />
+      </div>
 
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Titre */}
