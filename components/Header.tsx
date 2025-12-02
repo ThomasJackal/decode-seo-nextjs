@@ -87,20 +87,20 @@ export default function Header() {
         </Link>
       )}
 
-      <div className="absolute bottom-0 left-0 w-full flex justify-start px-16 pointer-events-none">
+      <div className="absolute bottom-0 left-0 flex justify-start pointer-events-none">
         <Image
-          src="/logo.svg"
+          src="/twin-towers.svg"
           alt="Logo Observatoire du Syntaxerrorisme"
-          width={50}
-          height={50}
+          width={150}
+          height={150}
           className="opacity-90 pointer-events-none select-none"
           priority
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-end xl:justify-between">
         {/* Titre */}
-        <div>
+        <div className="block md:hidden lg:block">
           <Link
             href="/"
             className="text-xl font-bold text-gray-800 hover:text-indigo-600"
