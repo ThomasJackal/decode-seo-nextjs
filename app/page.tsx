@@ -7,7 +7,7 @@ const BASE_URL = "https://observatoire-syntaxerrorisme.vercel.app";
 
 export const metadata: Metadata = {
   title:
-    "Syntaxerrorisme — Observatoire, lois, jurisprudence, histoire & prévention",
+    "L'Observatoire du Syntaxerrorisme — lois, jurisprudence, histoire & prévention",
   description:
     "Découvrez l’Observatoire du Syntaxerrorisme : définitions, textes de lois, jurisprudence, chronologie historique, figures marquantes et ressources de prévention.",
   keywords: [
